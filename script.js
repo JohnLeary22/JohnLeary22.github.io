@@ -8,42 +8,42 @@ const themeInfo = {
   normal: {
     title: 'Normal classroom view',
     description: 'A clear, inclusive classroom where all students can access written instruction, board content, and peer interactions.',
-    image: 'images/normal-vision.png'
+    image: 'normal-vision.png'
   },
   myopia: {
     title: 'Myopia — short-sightedness',
     description: 'Students struggle to see the board and distant objects. Teachers can provide large print, closer seating, and digital magnification.',
-    image: 'images/myopia-vision.png'
+    image: 'myopia-vision.png'
   },
   hyperopia: {
     title: 'Hyperopia — long-sightedness',
     description: 'Close work can be tiring or unclear. Teachers can offer papers positioned closer, clear desk materials, and adaptive lighting.',
-    image: 'images/hyperopia-vision.png'
+    image: 'hyperopia-vision.png'
   },
   cataracts: {
     title: 'Cataracts',
     description: 'Vision can become cloudy and dim. Teachers can reduce glare, improve contrast, and provide clear, enlarged materials.',
-    image: 'images/cataracts-vision.png'
+    image: 'cataracts-vision.png'
   },
   cmv: {
     title: 'CMV retinitis',
     description: 'Peripheral vision can be affected and the classroom may feel fragmented. Teachers should use verbal instruction and accessible seating.',
-    image: 'images/cmv-retinitis-vision.png'
+    image: 'cmv-retinitis-vision.png'
   },
   glaucoma: {
     title: 'Glaucoma',
     description: 'Peripheral vision is reduced and the student may miss details at the edges of the room. Clear classroom layouts and verbal cues help.',
-    image: 'images/glaucoma-vision.png'
+    image: 'glaucoma-vision.png'
   },
   macular: {
     title: 'Macular degeneration',
     description: 'Central vision is impaired, so the learner may lose focus on faces and text. Strong contrast and assistive technology are important.',
-    image: 'images/macular-degeneration-vision.png'
+    image: 'macular-degeneration-vision.png'
   },
   diabetic: {
     title: 'Diabetic retinopathy',
     description: 'Fluctuating vision can affect reading and attention. Teachers should offer flexible pacing, magnification, and check-ins.',
-    image: 'images/diabetic-retinopathy-vision.png'
+    image: 'diabetic-retinopathy-vision.png'
   }
 };
 
