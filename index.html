@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vision Conditions Classroom</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-theme="normal">
+    <aside class="side-rail" aria-label="Vision condition tabs">
+      <button class="tab active" data-theme="normal" type="button">Normal</button>
+      <button class="tab" data-theme="myopia" type="button">Myopia</button>
+      <button class="tab" data-theme="hyperopia" type="button">Hyperopia</button>
+      <button class="tab" data-theme="cataracts" type="button">Cataracts</button>
+      <button class="tab" data-theme="cmv" type="button">CMV retinitis</button>
+      <button class="tab" data-theme="glaucoma" type="button">Glaucoma</button>
+      <button class="tab" data-theme="macular" type="button">Macular degeneration</button>
+      <button class="tab" data-theme="diabetic" type="button">Diabetic retinopathy</button>
+    </aside>
+
+    <main class="scene">
+      <div class="classroom" aria-live="polite">
+        <div class="visual-overlay"></div>
+
+        <div class="info-panel">
+          <p class="label">View</p>
+          <h1 id="theme-title">Normal classroom view</h1>
+          <p id="theme-description">
+            A clear, inclusive classroom where all students can access written instruction,
+            board content, and peer interactions.
+          </p>
+        </div>
+      </div>
+
+      <div class="eye" aria-label="Eyeball following the cursor">
+        <div class="sclera">
+          <div class="iris">
+            <div class="pupil">
+              <div class="shine"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

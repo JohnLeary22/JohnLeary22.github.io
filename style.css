@@ -1,0 +1,289 @@
+:root {
+  --bg1: #0d1520;
+  --bg2: #1d2e3c;
+  --panel: rgba(10, 18, 25, 0.72);
+  --panel-border: rgba(255, 255, 255, 0.14);
+  --eye-size: 260px;
+  --iris-size: 118px;
+  --pupil-size: 52px;
+  --look-x: 0px;
+  --look-y: 0px;
+  --classroom-image: url('images/normal-vision.png');
+  --classroom-overlay: rgba(8, 12, 18, 0.2);
+  --classroom-bright: 1;
+  --classroom-contrast: 1;
+  --classroom-blur: 0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle at top, var(--bg2), var(--bg1) 60%);
+  color: #edf4ff;
+}
+
+body {
+  position: relative;
+  cursor: crosshair;
+}
+
+.side-rail {
+  position: absolute;
+  top: 20px;
+  left: 18px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 30;
+}
+
+.tab {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(11, 17, 28, 0.42);
+  color: #edf4ff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.tab:hover {
+  transform: translateX(3px);
+  background: rgba(255,255,255,0.08);
+}
+
+.tab.active {
+  background: linear-gradient(180deg, rgba(255,211,117,0.22), rgba(255,255,255,0.08));
+  border-color: rgba(255,212,123,0.8);
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.classroom {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background-image: linear-gradient(var(--classroom-overlay), var(--classroom-overlay)), var(--classroom-image);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(var(--classroom-bright)) contrast(var(--classroom-contrast)) blur(var(--classroom-blur));
+}
+
+.visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+.info-panel {
+  position: absolute;
+  right: 52px;
+  top: 120px;
+  width: min(360px, 30vw);
+  padding: 18px 22px;
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+  background: var(--panel);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.18);
+}
+
+.label {
+  margin: 0 0 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.info-panel h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.7rem, 2vw, 2.4rem);
+  line-height: 1.1;
+}
+
+.info-panel p {
+  margin: 0;
+  line-height: 1.5;
+  color: rgba(237, 244, 255, 0.85);
+}
+
+body[data-theme="normal"] {
+  --classroom-image: url('images/normal-vision.png');
+  --classroom-overlay: rgba(0, 0, 0, 0);
+  --classroom-bright: 1;
+  --classroom-contrast: 1;
+  --classroom-blur: 0px;
+}
+
+body[data-theme="myopia"] {
+  --classroom-image: url('images/myopia-vision.png');
+  --classroom-overlay: rgba(0, 0, 0, 0);
+  --classroom-bright: 1;
+  --classroom-contrast: 1;
+  --classroom-blur: 0px;
+}
+
+body[data-theme="hyperopia"] {
+  --classroom-image: url('images/hyperopia-vision.png');
+  --classroom-overlay: rgba(0, 0, 0, 0);
+  --classroom-bright: 1;
+  --classroom-contrast: 1;
+  --classroom-blur: 0px;
+}
+
+body[data-theme="cataracts"] {
+  --classroom-image: url('images/cataracts-vision.png');
+  --classroom-overlay: rgba(0, 0, 0, 0);
+  --classroom-bright: 1;
+  --classroom-contrast: 1;
+  --classroom-blur: 0px;
+}
+
+body[data-theme="cmv"] {
+  --classroom-image: url('images/cmv-retinitis-vision.png');
+  --classroom-overlay: rgba(0, 0, 0, 0);
+  --classroom-bright: 1;
+  --classroom-contrast: 1;
+  --classroom-blur: 0px;
+}
+
+body[data-theme="glaucoma"] {
+  --classroom-image: url('images/glaucoma-vision.png');
+  --classroom-overlay: rgba(0, 0, 0, 0);
+  --classroom-bright: 1;
+  --classroom-contrast: 1;
+  --classroom-blur: 0px;
+}
+
+body[data-theme="macular"] {
+  --classroom-image: url('images/macular-degeneration-vision.png');
+  --classroom-overlay: rgba(0, 0, 0, 0);
+  --classroom-bright: 1;
+  --classroom-contrast: 1;
+  --classroom-blur: 0px;
+}
+
+body[data-theme="diabetic"] {
+  --classroom-image: url('images/diabetic-retinopathy-vision.png');
+  --classroom-overlay: rgba(0, 0, 0, 0);
+  --classroom-bright: 1;
+  --classroom-contrast: 1;
+  --classroom-blur: 0px;
+}
+
+.eye {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  width: var(--eye-size);
+  height: calc(var(--eye-size) * 0.56);
+  transform: translateX(-50%);
+  filter: drop-shadow(0 20px 16px rgba(0,0,0,0.25));
+  z-index: 30;
+}
+
+.sclera {
+  position: absolute;
+  inset: 0;
+  border-radius: 50% 50% 52% 48% / 56% 54% 46% 44%;
+  background: linear-gradient(180deg, #f9f9fb 0%, #e7edf4 100%);
+  border: 7px solid rgba(16,18,22,0.94);
+  overflow: hidden;
+  box-shadow: inset 0 -10px 18px rgba(105,120,135,0.2), inset 0 0 20px rgba(255,255,255,0.8);
+}
+
+.sclera::before,
+.sclera::after {
+  content: "";
+  position: absolute;
+  inset: 18% auto auto 15%;
+  width: 72%;
+  height: 58%;
+  background: rgba(255,255,255,0.4);
+  filter: blur(12px);
+  border-radius: 50%;
+  transform: rotate(-12deg);
+}
+
+.sclera::after {
+  inset: auto 15% 12% auto;
+  width: 36%;
+  height: 32%;
+  background: rgba(80,118,185,0.08);
+  filter: blur(5px);
+}
+
+.iris {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--iris-size);
+  height: var(--iris-size);
+  transform: translate(-50%, -50%) translate(var(--look-x), var(--look-y));
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 30%, #98f0ff 0%, #48b7f4 18%, #1a6fb8 42%, #143f6d 62%, #081b2e 100%);
+  border: 8px solid rgba(5,20,31,0.15);
+  box-shadow: inset 0 10px 18px rgba(255,255,255,0.15), inset 0 0 25px rgba(0,0,0,0.35);
+}
+
+.pupil {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--pupil-size);
+  height: var(--pupil-size);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 32%, #2a2b2d, #010203 70%);
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.12);
+}
+
+.shine {
+  position: absolute;
+  left: 24%;
+  top: 18%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 0 12px rgba(255,255,255,0.8);
+}
+
+@media (max-width: 900px) {
+  .side-rail {
+    width: 180px;
+    top: 18px;
+    left: 12px;
+  }
+
+  .tab {
+    font-size: 0.72rem;
+    padding: 10px 12px;
+  }
+
+  .info-panel {
+    right: 18px;
+    top: 120px;
+    width: min(280px, 46vw);
+  }
+}
